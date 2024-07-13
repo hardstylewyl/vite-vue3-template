@@ -9,7 +9,8 @@
     "build": "run-p check-type build-prod",
     "build-prod": "rimraf dist && vite build --config vite/config.prod.ts",
     "check-type": "vue-tsc --noEmit",
-    "test": "vitest"
+    "test": "vitest",
+    "fmt": "dprint fmt"
   },
   "dependencies": {
     "axios": "^1.7.2",
@@ -27,6 +28,7 @@
     "@vitejs/plugin-vue-jsx": "^4.0.0",
     "@vueuse/core": "^10.11.0",
     "autoprefixer": "^10.4.19",
+    "dprint": "^0.47.2",
     "npm-run-all": "^4.1.5",
     "rimraf": "^6.0.1",
     "rollup-plugin-visualizer": "^5.12.0",

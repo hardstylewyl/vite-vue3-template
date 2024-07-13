@@ -1,8 +1,8 @@
-import { RouteRecordRaw } from "vue-router";
-//静态路由表
+import { RouteRecordRaw } from 'vue-router'
+// 静态路由表
 export const staticRouter: RouteRecordRaw[] = [
-    {
-        path: '/',
-        component: () => import('@/views/Home.vue')
-    }
+	{
+		path: '/',
+		component: () => import('@/views/Home.vue'),
+	},
 ]

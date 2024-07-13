@@ -1,7 +1,5 @@
-import {test} from 'vitest'
-
+import { test } from 'vitest'
 
 test('test foo', () => {
-
-    console.log('test foo')
+	console.log('test foo')
 })
