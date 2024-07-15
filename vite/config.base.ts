@@ -1,12 +1,13 @@
-import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
+
+import vue from '@vitejs/plugin-vue'
 import { defineConfig } from 'vite'
 // jsx支持插件
 import vueJsx from '@vitejs/plugin-vue-jsx'
 // 浏览器css兼容前缀插件
 import autoprefixer from 'autoprefixer'
 // 兼容低版本浏览器插件
-import legacy from '@vitejs/plugin-legacy'
+// import legacy from '@vitejs/plugin-legacy'
 
 export default defineConfig({
 	// 插件配置

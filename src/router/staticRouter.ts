@@ -1,4 +1,4 @@
-import { RouteRecordRaw } from 'vue-router'
+import type { RouteRecordRaw } from 'vue-router'
 // 静态路由表
 export const staticRouter: RouteRecordRaw[] = [
 	{

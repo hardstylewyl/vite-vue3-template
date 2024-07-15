@@ -1,4 +1,5 @@
-import { mergeConfig, type UserConfig, UserConfigFnObject } from 'vite'
+import { mergeConfig, type UserConfig } from 'vite'
+
 import baseConfig from './config.base'
 import configCompressPlugin from './plugin/compress'
 import configImageminPlugin from './plugin/imagemin'

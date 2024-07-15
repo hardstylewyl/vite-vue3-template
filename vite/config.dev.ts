@@ -1,10 +1,18 @@
-import { mergeConfig, type UserConfig } from 'vite'
+import { mergeConfig } from 'vite'
+import checker from 'vite-plugin-checker'
+
 import baseConfig from './config.base'
 
 // 开发缓解
 export default mergeConfig({
 	mode: 'development',
 	base: '/',
+	plugins: [
+		// 运行时检查类型
+		checker({
+			vueTsc: true,
+		}),
+	],
 	server: {
 		port: 3000,
 		host: '0.0.0.0',

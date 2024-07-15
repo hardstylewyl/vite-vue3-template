@@ -1,5 +1,6 @@
 import type { App } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
+
 import { routers } from './routerSheel'
 import { staticRouter } from './staticRouter'
 

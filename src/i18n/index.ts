@@ -1,8 +1,10 @@
-import { LOCAL_KEYS } from '@/types'
 import type { App } from 'vue'
 import { createI18n } from 'vue-i18n'
+
 import { datetimeFormats } from './i18nFormat'
 import { messages } from './i18nMessage'
+
+import { LOCAL_KEYS } from '@/types'
 
 const supportLanguages = Object.keys(messages)
 
