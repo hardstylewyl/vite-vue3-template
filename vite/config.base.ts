@@ -1,9 +1,10 @@
 import { resolve } from 'path'
-
-import vue from '@vitejs/plugin-vue'
 import { defineConfig } from 'vite'
-// jsx支持插件
-import vueJsx from '@vitejs/plugin-vue-jsx'
+import Vue from '@vitejs/plugin-vue'
+import VueJsx from '@vitejs/plugin-vue-jsx'
+
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
 // 浏览器css兼容前缀插件
 import autoprefixer from 'autoprefixer'
 // 兼容低版本浏览器插件
@@ -12,8 +13,19 @@ import autoprefixer from 'autoprefixer'
 export default defineConfig({
 	// 插件配置
 	plugins: [
-		vue(),
-		vueJsx(),
+		Vue(),
+		VueJsx(),
+		AutoImport({
+			imports: ['vue'],
+			dts: 'src/types/AutoImport.d.ts',
+			eslintrc: {
+				enabled: true,
+			},
+			vueTemplate: true,
+		}),
+		Components({
+			dts: 'src/types/Components.d.ts',
+		}),
 	],
 	// 别名配置
 	resolve: {
@@ -24,11 +36,18 @@ export default defineConfig({
 				replacement: resolve(__dirname, '../src'),
 			},
 		],
+		extensions: [
+			'.js',
+			'.json',
+			'.jsx',
+			'.mjs',
+			'.ts',
+			'.tsx',
+			'.vue',
+		],
 	},
 	// 在windows定义对象
-	define: {
-		'process.env': {},
-	},
+	define: {'process.env': {}},
 	// 样式附加/样式兼容
 	css: {
 		preprocessorOptions: {
